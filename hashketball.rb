@@ -195,12 +195,8 @@ def player_numbers(team_name)
   end
 end
 
-def player_stats(player_n)
-  game_hash.each do |home_away, keys|
-    keys[:players].each do |player|
-  
-  end
-end
+def player_stats(player_name)
+  find_the_player(player_name).reject { |key, value| key == :player_name }
 end
 
 
