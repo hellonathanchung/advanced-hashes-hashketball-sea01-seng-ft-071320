@@ -187,26 +187,16 @@ end
 #     team[:team_name]
 #   end
 # end
-def player_numbers(team_name)
-  game_hash.each do |place, team|
-    if team[:team_name] == team_name
-      return team[:players].map { |player| player[:number] }
+
+def player_stats(player_n)
+  game_hash.each do |home_away, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == player_n
+        return player.delete_if { |stat, value| [:player_name].include?(stat)}
+      end
     end
   end
 end
-
-player_stats = nil
-	game_hash.each do |location, loc_data|
-		loc_data[:players].each do |player, stats|
-			if stats[:player_name] == player_name
-	           player_stats = stats
-	           player_stats.delete(:player_name)
-			end
-		end
-	end
-	player_stats
-end
-
 
 def big_shoe_rebounds
 end 
