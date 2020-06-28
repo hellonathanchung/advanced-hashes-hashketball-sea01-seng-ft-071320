@@ -199,7 +199,7 @@ def player_stats(player_name)
   game_hash.each do |place, team|
     team[:players].each do |stats|
       if player[:playername] == player_name
-        return player.delete_if {
+        return player.delete_if  { |stat, value| [:player_name].include?(stat)}
     # binding.pry
     end
   end 
