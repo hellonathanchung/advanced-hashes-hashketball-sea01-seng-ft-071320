@@ -198,7 +198,7 @@ end
 def player_stats(player_name)
   game_hash.each do |place, team|
     team[:players].each do |place 
-    binding.pry
+    # binding.pry
     end
   end 
 def big_shoe_rebounds
