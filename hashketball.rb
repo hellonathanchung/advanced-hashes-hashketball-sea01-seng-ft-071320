@@ -198,7 +198,7 @@ end
 def player_stats(player_name)
   game_hash.each do |place, team|
     team[:players].each do |stats|
-      if stats[:playername] == player_name
+      if player[:playername] == player_name
         return player.delete_if  { |stat, value| [:player_name].include?(stat)}
       end
     # binding.pry
