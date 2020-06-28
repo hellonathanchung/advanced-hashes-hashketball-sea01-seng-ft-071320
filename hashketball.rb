@@ -200,6 +200,7 @@ def player_stats(player_name)
     team[:players].each do |stats|
       if player[:playername] == player_name
         return player.delete_if  { |stat, value| [:player_name].include?(stat)}
+      end
     # binding.pry
     end
   end 
