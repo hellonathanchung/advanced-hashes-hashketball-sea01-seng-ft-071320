@@ -200,7 +200,6 @@ def player_stats(player_name)
 		team_data[:players].each do |a| 
 			if a[:player_name] == player_name
 				my_hash = a
-				my_hash.shift
 				return my_hash
 			end
 		end
