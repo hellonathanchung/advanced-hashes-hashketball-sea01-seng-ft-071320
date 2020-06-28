@@ -196,15 +196,15 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-	game_hash.each do |location, loc_data|
-		loc_data[:players].each do |player, stats|
-			if stats[:player_name].downcase == player_name.downcase
-	           player_stats = stats
-	           player_stats.delete(:player_name)
+	game_hash.each do |location, team_data|
+		team_data[:players].each do |a| 
+			if a[:player_name] == player_name
+				my_hash = a
+				my_hash.shift
+				return my_hash
 			end
 		end
 	end
-	player_stats
 end
 
 
