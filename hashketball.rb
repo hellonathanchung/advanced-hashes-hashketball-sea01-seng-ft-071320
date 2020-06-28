@@ -198,7 +198,7 @@ end
 def player_stats(player_name)
 	game_hash.each do |location, loc_data|
 		loc_data[:players].each do |player, stats|
-			if stats[:player_name] == player_name
+			if stats[:player_name].downcase == player_name.downcase
 	           player_stats = stats
 	           player_stats.delete(:player_name)
 			end
