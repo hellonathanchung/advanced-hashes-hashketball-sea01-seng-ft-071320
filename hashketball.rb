@@ -195,15 +195,15 @@ def player_numbers(team_name)
   end
 end
 
-def player_stats(player_name)
-  game_hash.each do |place, team|
-    team[:players].each do |stats|
-      if player[:playername] == player_name
-        return player.delete_if  { |stat, value| [:player_name].include?(stat)}
+def player_stats(player_n)
+  game_hash.each do |home_away, keys|
+    keys[:players].each do |player|
+      if player[:player_name] == player_n
+        return player.delete_if { |stat, value| [:player_name].include?(stat)}
       end
-    # binding.pry
     end
-  end 
+  end
+end
 end
 def big_shoe_rebounds
 end 
