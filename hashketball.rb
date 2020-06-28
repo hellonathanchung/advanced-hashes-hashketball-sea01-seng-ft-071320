@@ -196,7 +196,6 @@ def player_numbers(team_name)
 end
 
 def player_stats(player_name)
-player_stats = nil
 	game_hash.each do |location, loc_data|
 		loc_data[:players].each do |player, stats|
 			if stats[:player_name] == player_name
